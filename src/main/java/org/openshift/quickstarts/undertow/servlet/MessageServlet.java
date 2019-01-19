@@ -18,7 +18,7 @@ public class MessageServlet extends HttpServlet {
 	public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		String file = request.getParameter("file");
         if (file == null) {
-            PrintWriter writer = resp.getWriter();
+            PrintWriter writer = response.getWriter();
             writer.write("Parameter file is required.");
             writer.close();
             return;
