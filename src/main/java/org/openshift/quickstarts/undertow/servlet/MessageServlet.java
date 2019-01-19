@@ -25,7 +25,6 @@ public class MessageServlet extends HttpServlet {
             return;
         }
 		String filePath = "/tmp/download/" + file;
-		filePath = "C:/temp/downloader/" + file;
 		File downloadFile = new File(filePath);
 
 		String mimeType = "application/octet-stream";
