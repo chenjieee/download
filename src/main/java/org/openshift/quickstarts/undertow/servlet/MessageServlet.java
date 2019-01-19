@@ -2,6 +2,7 @@ package org.openshift.quickstarts.undertow.servlet;
 
 import java.io.*;
 import javax.servlet.*;
+import javax.servlet.http.*;
 
 public class MessageServlet extends HttpServlet {
 
