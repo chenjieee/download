@@ -26,7 +26,7 @@ public class MessageServlet extends HttpServlet {
             } else {
                 pw.write("<html><body><ul>");
                 for (int i = 1001; i <= 1000 + Integer.parseInt(count); i++) {
-                    pw.write("<li><a href=\"&file=" + i + "\" target=\"_blank\">" + i + "</a></li>");
+                    pw.write("<li><a href=\"" + request.getRequestURL() + "?file=" + i + "\" target=\"_blank\">" + i + "</a></li>");
                 }
                 pw.write("</ul></body></html>");
             }
