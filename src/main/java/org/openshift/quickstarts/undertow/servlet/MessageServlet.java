@@ -18,10 +18,19 @@ public class MessageServlet extends HttpServlet {
 
 	public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		String file = request.getParameter("file");
+        String count = request.getParameter("count");
         if (file == null) {
-            PrintWriter writer = response.getWriter();
-            writer.write("Parameter file is required.");
-            writer.close();
+            PrintWriter pw = response.getWriter();
+            if (count == null) {
+                pw.write("parameter file or count is required");
+            } else {
+                pw.write("<html><body><ul>");
+                for (int i = 1001; i <= 1000 + Integer.parseInt(count); i++) {
+                    pw.writw("<li><a href=\"#?file=" + i + "\" target=\"_blank\">" + i + "</a></li>";
+                }
+                pw.write("</ul></body></html>");
+            }
+            pw.close();
             return;
         }
 		String filePath = "/tmp/download/" + file;
